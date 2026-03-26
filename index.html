@@ -1,123 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Food Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anju Joshi Portfolio</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: #fff8f0;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    nav {
-      background: #ff5722;
-      padding: 15px;
-      text-align: center;
-    }
+        body {
+            background: #0f172a;
+            color: white;
+        }
 
-    nav a {
-      color: white;
-      margin: 15px;
-      text-decoration: none;
-      font-size: 18px;
-    }
+        header {
+            background: #020617;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .hero {
-      text-align: center;
-      padding: 50px;
-      background: #ffe0b2;
-    }
+        header h1 {
+            color: #38bdf8;
+        }
 
-    .hero h1 {
-      color: #e64a19;
-    }
+        nav {
+            background: #1e293b;
+            padding: 10px;
+            text-align: center;
+        }
 
-    .food-section {
-      padding: 20px;
-      text-align: center;
-    }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .card {
-      display: inline-block;
-      background: white;
-      margin: 15px;
-      padding: 15px;
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-    }
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-    button {
-      background: #ff5722;
-      color: white;
-      border: none;
-      padding: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
+        .card {
+            background: #1e293b;
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+            transition: 0.3s;
+        }
 
-    footer {
-      background: #ff5722;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-  </style>
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #38bdf8;
+            color: black;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body>
 
+<header>
+    <h1>Anju Joshi</h1>
+    <p>Web Developer | Creative Designer</p>
+</header>
+
 <nav>
-  <a href="#">Home</a>
-  <a href="#menu">Menu</a>
-  <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<div class="hero">
-  <h1>Welcome to Anju Food Store 🍕</h1>
-  <p>Delicious food at your doorstep</p>
-</div>
+<section id="about">
+    <div class="card">
+        <h2>About Me</h2>
+        <p>I am Anju Joshi. I create beautiful and simple websites. I love learning coding and building projects.</p>
+    </div>
+</section>
 
-<div class="food-section" id="menu">
-  <h2>Our Menu</h2>
+<section id="skills">
+    <div class="card">
+        <h2>My Skills</h2>
+        <p>HTML | CSS | Basic JavaScript</p>
+    </div>
+</section>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Pizza</h3>
-    <p>₹199</p>
-    <button>Order Now</button>
-  </div>
+<section id="projects">
+    <div class="card">
+        <h2>Projects</h2>
+        <p>✔ Handicraft Website</p>
+        <p>✔ Car Selling Website</p>
+        <a href="#" class="btn">View Projects</a>
+    </div>
+</section>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Burger</h3>
-    <p>₹99</p>
-    <button>Order Now</button>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/200">
-    <h3>Pasta</h3>
-    <p>₹149</p>
-    <button>Order Now</button>
-  </div>
-
-</div>
-
-<div class="food-section" id="contact">
-  <h2>Contact Us</h2>
-  <p>📞 Mobile: <b>9876543210</b></p>
-  <p>📍 Location: Your City</p>
-</div>
+<section id="contact">
+    <div class="card">
+        <h2>Contact Me</h2>
+        <p>Email: yourmail@gmail.com</p>
+        <p>Phone: +91 0000000000</p>
+    </div>
+</section>
 
 <footer>
-  <p>© 2026 Anju Food Store</p>
+    <p>© 2026 Anju Joshi | All Rights Reserved</p>
 </footer>
 
 </body>
