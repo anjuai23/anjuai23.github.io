@@ -1,91 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anju Joshi Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anju Joshi Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial;
+}
 
-        body {
-            background: #0f172a;
-            color: white;
-        }
+body{
+    background:#0f172a;
+    color:white;
+}
 
-        header {
-            background: #020617;
-            padding: 20px;
-            text-align: center;
-        }
+/* Header */
+header{
+    text-align:center;
+    padding:40px 20px;
+}
 
-        header h1 {
-            color: #38bdf8;
-        }
+header h1{
+    color:#38bdf8;
+}
 
-        nav {
-            background: #1e293b;
-            padding: 10px;
-            text-align: center;
-        }
+.typing{
+    border-right:2px solid #38bdf8;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation: typing 4s steps(30,end) forwards, blink 0.7s infinite;
+}
 
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+@keyframes typing{
+    to{width:100%;}
+}
+@keyframes blink{
+    50%{border-color:transparent;}
+}
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+/* Navbar */
+nav{
+    background:#1e293b;
+    padding:12px;
+    text-align:center;
+}
 
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .card {
-            background: #1e293b;
-            margin: 15px auto;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 600px;
-            transition: 0.3s;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+/* Sections */
+section{
+    padding:50px 20px;
+    text-align:center;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #38bdf8;
-            color: black;
-            border-radius: 10px;
-            text-decoration: none;
-        }
+.card{
+    background:#1e293b;
+    margin:20px auto;
+    padding:25px;
+    border-radius:15px;
+    max-width:600px;
+    transition:0.3s;
+}
 
-        footer {
-            background: #020617;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+.card:hover{
+    transform:scale(1.05);
+}
+
+/* Buttons */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#38bdf8;
+    color:black;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+/* Contact Form */
+input, textarea{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#38bdf8;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    background:#020617;
+    text-align:center;
+    padding:15px;
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
     <h1>Anju Joshi</h1>
-    <p>Web Developer | Creative Designer</p>
+    <p class="typing">Web Developer | Creative Designer | Learner</p>
 </header>
 
 <nav>
@@ -98,14 +135,14 @@
 <section id="about">
     <div class="card">
         <h2>About Me</h2>
-        <p>I am Anju Joshi. I create beautiful and simple websites. I love learning coding and building projects.</p>
+        <p>I am Anju Joshi. I build modern websites and love learning new technologies.</p>
     </div>
 </section>
 
 <section id="skills">
     <div class="card">
-        <h2>My Skills</h2>
-        <p>HTML | CSS | Basic JavaScript</p>
+        <h2>Skills</h2>
+        <p>HTML | CSS | JavaScript (Basic)</p>
     </div>
 </section>
 
@@ -114,21 +151,35 @@
         <h2>Projects</h2>
         <p>✔ Handicraft Website</p>
         <p>✔ Car Selling Website</p>
-        <a href="#" class="btn">View Projects</a>
+        <a href="#" class="btn">Live Demo</a>
     </div>
 </section>
 
 <section id="contact">
     <div class="card">
         <h2>Contact Me</h2>
-        <p>Email: yourmail@gmail.com</p>
-        <p>Phone: +91 0000000000</p>
+
+        <form onsubmit="sendMsg(); return false;">
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea rows="4" placeholder="Your Message"></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="msg"></p>
+
     </div>
 </section>
 
 <footer>
     <p>© 2026 Anju Joshi | All Rights Reserved</p>
 </footer>
+
+<script>
+function sendMsg(){
+    document.getElementById("msg").innerHTML = "✅ Message Sent Successfully!";
+}
+</script>
 
 </body>
 </html>
