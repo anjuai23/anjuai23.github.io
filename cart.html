@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Your Cart</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="cart.html">Cart 🛒</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section id="cartItems"></section>
+
+<a id="whatsappBtn" class="btn">Order on WhatsApp</a>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let output = "";
+let total = 0;
+
+cart.forEach(item => {
+    output += `<p>${item.name} - ₹${item.price}</p>`;
+    total += item.price;
+});
+
+output += `<h3>Total: ₹${total}</h3>`;
+document.getElementById("cartItems").innerHTML = output;
+
+// WhatsApp order
+let msg = cart.map(i => i.name + " ₹" + i.price).join("%0A");
+document.getElementById("whatsappBtn").href =
+"https://wa.me/919876543210?text=Order:%0A" + msg + "%0ATotal: ₹" + total;
+</script>
+
+</body>
+</html>
