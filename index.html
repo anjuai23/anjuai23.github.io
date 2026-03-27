@@ -1,11 +1,31 @@
-<h1>♟️ Chess Game</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jungle Adventure Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<button onclick="startGame('easy')">Easy</button>
-<button onclick="startGame('medium')">Medium</button>
-<button onclick="startGame('hard')">Hard</button>
+<canvas id="gameCanvas"></canvas>
 
-<script>
-function startGame(level){
-  window.location.href = "game.html?level=" + level;
-}
-</script>
+<div id="ui">
+  <div id="info">
+    ❤️ <span id="health">100</span> |
+    🪙 <span id="score">0</span> |
+    🎯 Level <span id="level">1</span>
+  </div>
+
+  <div id="controls">
+    <button ontouchstart="moveLeft()" ontouchend="stop()">⬅️</button>
+    <button ontouchstart="jump()">⬆️</button>
+    <button ontouchstart="moveRight()" ontouchend="stop()">➡️</button>
+  </div>
+
+  <button id="restart" onclick="restartGame()">Restart</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
