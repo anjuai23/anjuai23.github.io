@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Chess Pro</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>♟️ Chess Multiplayer</h1>
+<h1>♟️ Chess Game</h1>
 
-  <input type="text" id="roomId" placeholder="Enter Room ID">
-  <button onclick="joinGame()">Join Game</button>
+<button onclick="startGame('easy')">Easy</button>
+<button onclick="startGame('medium')">Medium</button>
+<button onclick="startGame('hard')">Hard</button>
 
-  <script>
-    function joinGame() {
-      const room = document.getElementById("roomId").value;
-      window.location.href = `game.html?room=${room}`;
-    }
-  </script>
-</body>
-</html>
+<script>
+function startGame(level){
+  window.location.href = "game.html?level=" + level;
+}
+</script>
