@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan & Pay</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        img {
+            margin: 20px 0;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Scan and Pay ₹20</h1>
+    <img src="qr.png" alt="QR Code">
+    <p>After payment, your good luck begins ✨</p>
+</div>
+
+<footer>
+    Made with ❤️ by Anju Joshi
+</footer>
+
+</body>
+</html>
