@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>₹20 Good Luck</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 25px;
+            background: #ffcc00;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffaa00;
+            transform: scale(1.1);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>₹20 Good Luck Website</h1>
+    <p>Pay ₹20 and receive good luck 🍀</p>
+    <button onclick="payNow()">Pay Now</button>
+</div>
+
+<footer>
+    Made with ❤️ by Anju Joshi
+</footer>
+
+<script>
+    function payNow() {
+        alert("Your luck is waiting! 🍀");
+        
+        setTimeout(() => {
+            window.location.href = "qr.html";
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
