@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+}
+
+#startScreen, #gameOverScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  background: orange;
+  color: white;
+  border-radius: 5px;
+}
