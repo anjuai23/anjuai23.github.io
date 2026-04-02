@@ -119,7 +119,15 @@ class Obstacle {
     this.y += speed;
   }
 }
+coins.forEach((coin, i) => {
+  coin.update();
+  coin.draw();
 
+  if (detectCollision(player, coin)) {
+    coins.splice(i, 1);
+    coinScore++;
+  }
+});
 let player = new Player();
 player.y = canvas.height - 100;
 
