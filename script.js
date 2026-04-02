@@ -1,3 +1,20 @@
+const playerImg = new Image();
+playerImg.src = "player.png";
+
+const enemyImgs = [
+  "enemy1.png",
+  "enemy2.png"
+].map(src => {
+  let img = new Image();
+  img.src = src;
+  return img;
+});
+
+const coinImg = new Image();
+coinImg.src = "coin.png";
+
+const bgImg = new Image();
+bgImg.src = "bg.png";
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -23,7 +40,25 @@ class Player {
     this.y = 0;
     this.dy = 0;
     this.grounded = false;
+  }class Coin {
+  constructor() {
+    this.size = 30;
+    this.lane = Math.floor(Math.random() * 3);
+    this.y = -50;
   }
+
+  get x() {
+    return (canvas.width / 3) * this.lane + canvas.width / 6 - this.size / 2;
+  }
+
+  draw() {
+    ctx.drawImage(coinImg, this.x, this.y, this.size, this.size);
+  }
+
+  update() {
+    this.y += speed;
+  }
+}
 
   get x() {
     return (canvas.width / 3) * this.lane + canvas.width / 6 - this.width / 2;
@@ -34,8 +69,8 @@ class Player {
   }
 
   draw() {
-    ctx.fillStyle = "yellow";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+   ctx.drawImage(playerImg, this.x, this.y, this.width, this.height); 
+
   }
 
   update() {
@@ -63,7 +98,8 @@ class Player {
 }
 
 class Obstacle {
-  constructor() {
+  constructor() {this.img = enemyImgs[Math.floor(Math.random() * enemyImgs.length)];
+    this.img = enemyImgs[Math.floor(Math.random() * enemyImgs.length)];
     this.width = 50;
     this.height = 50;
     this.lane = Math.floor(Math.random() * 3);
@@ -88,8 +124,14 @@ let player = new Player();
 player.y = canvas.height - 100;
 
 let obstacles = [];
-
+let coins = [];
+let coinScore = 0;
 function spawnObstacle() {
+function spawnCoin() {
+  if (Math.random() < 0.02) {
+    coins.push(new Coin());
+  }
+}
   if (Math.random() < 0.03) {
     obstacles.push(new Obstacle());
   }
@@ -104,6 +146,7 @@ function detectCollision(a, b) {
   );
 }
 
+ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
 function gameLoop() {
   if (!gameRunning) return;
 
@@ -113,11 +156,13 @@ function gameLoop() {
   ctx.fillStyle = "green";
   ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
 
-  player.update();
-  player.draw();
+  player.update()
+  draw() {
+  ctx.drawImage(playerImg, this.x, this.y, this.width, this.height);
+}
 
   spawnObstacle();
-
+spawnCoin();
   obstacles.forEach((obs, i) => {
     obs.update();
     obs.draw();
@@ -137,7 +182,7 @@ function gameLoop() {
   ctx.fillStyle = "white";
   ctx.font = "20px Arial";
   ctx.fillText("Score: " + score, 20, 30);
-
+  ctx.fillText("Coins: " + coinScore, 20, 60); 
   requestAnimationFrame(gameLoop);
 }
 
