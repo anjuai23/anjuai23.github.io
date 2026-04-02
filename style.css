@@ -4,23 +4,28 @@ body {
   font-family: Arial;
   background: #222;
   color: white;
-  text-align: center;
 }
 
+/* Canvas ko background me bhejo */
 canvas {
-  display: block;
-  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
+/* UI ko upar lao */
 #startScreen, #gameOverScreen {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 18px;
   border: none;
   background: orange;
